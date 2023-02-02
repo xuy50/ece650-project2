@@ -8,17 +8,14 @@
 
 ## The Thread-Safe Malloc Implementation:
 
-&emsp;&emsp;For this project, we should implement the allocation policies. We should implement `6 methods`:<br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`//First Fit malloc/free`<br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`void *ff_malloc(size_t size);`<br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`void ff_free(void *ptr);`<br>
+&emsp;&emsp;For this project, we should implement the Thread-Safe Malloc. We should implement `4 methods`:<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Thread Safe malloc/free: locking version<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`void *ts_malloc_lock(size_t size);`<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`void ts_free_lock(void *ptr);`<br>
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`//Best Fit malloc/free`<br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`void *bf_malloc(size_t size);`<br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`void bf_free(void *ptr);`<br>
-
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`unsigned long get_data_segment_size(); //in bytes`<br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`unsigned long get_data_segment_free_space_size(); //in byte`<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Thread Safe malloc/free: non-locking version<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`void *ts_malloc_nolock(size_t size);`<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`void ts_free_nolock(void *ptr);`<br>
 <br>
 
 &emsp;&emsp;For the allocation policies, we should apply for enough heap space to store the required size space by `malloc method`. And free the specific address with `free method`.<br>
