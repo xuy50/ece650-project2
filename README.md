@@ -41,7 +41,7 @@ The non-locking version methods:<br>
 <br>
 
 ## Results from My Performance Experiments
-&emsp;&emsp;Because my results are so close and multithreading causes the results to fluctuate, I ran them each ten times and got the average of the results.<br>
+Because my results are so close and multithreading causes the results to fluctuate, I ran them each ten times and got the average of the results.<br>
 <img src="https://github.com/xuy50/ece650-project2/blob/main/result.png" width = "708" height = "527" alt="result"/>
 
 <br>
