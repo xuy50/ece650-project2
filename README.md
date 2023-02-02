@@ -48,11 +48,14 @@ The non-locking version methods:<br>
 
 ## Analysis of The Results
 
-**equal_size_allocs**<br>
-&emsp;&emsp;<br>
+**Execution Time**<br>
+&emsp;&emsp;For the execution time, the lock version is slower than non-lock version. For the lock version, there are two locks, these locks make the other threads will pause, which will have a longer time. The non-lock version only has one lock for `sbrk`, so all threads run without any stop except running `sbkr` at the same time. Therefore, the non-locking version will be faster than locking version.<br>
 
-**small_range_rand_allocs**<br>
-&emsp;&emsp;<br>
+**Data Segment Size**<br>
+&emsp;&emsp;For the data segment size, the lock version is less than non-lock version. For the lock version, there is only one main free list, so the free list has all free region in the heap, so when do `malloc`, it can read all free region. However, the non-locking version will separate the free list for each independent thread, so when do the `malloc` operation, the thread only can read its own free list whose size is much smaller than the total free list, so it will do more times `sbrk` operation for segment. Therefore, the locking version's data segment size will smaller than non-locking version.<br>
+
+<br>
+&emsp;&emsp;The locking verion sacrifices execution time and reduces segment size, and the non-locking version sacrifices less segment size and reduces execution time.<br>
 <br>
 
 
